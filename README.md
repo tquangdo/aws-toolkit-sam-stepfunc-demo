@@ -48,6 +48,7 @@ REPORT RequestId: a5e923cf-6447-463b-97f1-fd257da8e0dc  Init Duration: 0.26 ms  
 ```
 #### create step function's json
 - Ctrl + P -> type `>step function` -> select `create new step function`
+- choose tempate `Hello world`, ..., `Choice state`
 - select `json` OR `yaml`
 - will ouput *.json OR *.yaml file
 - click `render graph`, for example in `dtq-nodejs14.x/statemachine/stock_trader.asl.json`
