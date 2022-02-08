@@ -5,8 +5,6 @@
 ![Forks](https://img.shields.io/github/forks/tquangdo/aws-toolkit-sam-stepfunc-demo?color=f05340)
 [![Report an issue](https://img.shields.io/badge/Support-Issues-green)](https://github.com/tquangdo/aws-toolkit-sam-stepfunc-demo/issues/new)
 
-![overview](screenshots/overview.png)
-
 ## reference
 [aws](https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/welcome.html)
 
@@ -15,7 +13,7 @@
 
 ## SAM app: "lambda-nodejs14.x"
 ### 1) local
-#### run
+#### run CMD CLI
 1. lambda
 ```shell
 lambda-nodejs14.x$ sam local invoke
@@ -36,7 +34,7 @@ REPORT RequestId: 5f4f75e1-f314-4820-8b10-9f95868ec0d7  Init Duration: 0.34 ms  
 - click `AWS: Edit debug configuration > Invoke` in `lambda-nodejs14.x/hello-world/app.js`
 ![sam_debug](screenshots/sam_debug.png)
 ### 2) publish to AWS
-- Ctrl+P > type `>deploy` > select `Deploy SAM app`
+- Ctrl+P -> type `>deploy` -> select `Deploy SAM app`
 
 ## STEP FUNCTION app: "dtq-nodejs14.x"
 ### 1) local
@@ -49,7 +47,7 @@ Mounting /Users/NC00011462/Documents/GitHub/aws-test-del/dtq-nodejs14.x/function
 REPORT RequestId: a5e923cf-6447-463b-97f1-fd257da8e0dc  Init Duration: 0.26 ms  Duration: 180.12 ms     Billed Duration: 181 ms Memory Size: 128 MB     Max Memory Used: 128 MB
 ```
 #### create step function's json
-- Ctrl + P > type `>step function` > select `create new step function`
+- Ctrl + P -> type `>step function` -> select `create new step function`
 - select `json` OR `yaml`
 - will ouput *.json OR *.yaml file
 - click `render graph`, for example in `dtq-nodejs14.x/statemachine/stock_trader.asl.json`
