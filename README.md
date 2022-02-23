@@ -20,7 +20,7 @@
 3. select `SAM Hello World`
 4. select folder `aws-terraform-demo` (example)
 5. input app name `lambda-nodejs14.x` (example)
-#### run CMD CLI
+#### run CLI
 1. lambda
 ```shell
 lambda-nodejs14.x$ sam local invoke
@@ -38,16 +38,48 @@ REPORT RequestId: 5f4f75e1-f314-4820-8b10-9f95868ec0d7  Init Duration: 0.34 ms  
 }
 ```
 #### debug
-- Way A:
+- **_Way A:_**
 - in `lambda-nodejs14.x/hello-world/app.js`: click `AWS: Edit debug configuration > Invoke`
 - this screenshot is debugging at breakpoint: `index.js` > line 10 
 ![sam_debug](screenshots/sam_debug.png)
-- Way B:
-create breakpoint: `lambda-nodejs14.x/hello-world/app.js` > line 32
+- **_Way B:_**
+- create breakpoint: `lambda-nodejs14.x/hello-world/app.js` > line 32
 - vscode left tab > click icon "debug" > click icon "▶️" at top left corner
 ![sam_debug2](screenshots/sam_debug2.png)
 ### 2) publish to AWS
+#### vscode GUI
 - Ctrl+P -> type `>deploy` -> select `Deploy SAM app`
+#### run CLI
+```shell
+lambda-nodejs14.x$ sam deploy --guided
+=>
+Stack Name [sam-app]: DTQStackSAMHelloWorld
+        AWS Region [us-east-1]: 
+        #Shows you resources changes to be deployed and require a 'Y' to initiate deploy
+        Confirm changes before deploy [y/N]: y
+        #SAM needs permission to be able to create roles to connect to the resources in your template
+        Allow SAM CLI IAM role creation [Y/n]: 
+        #Preserves the state of previously provisioned resources when an operation fails
+        Disable rollback [y/N]: 
+        HelloWorldFunction may not have authorization defined, Is this okay? [y/N]: y
+        Save arguments to configuration file [Y/n]: 
+        SAM configuration file [samconfig.toml]: 
+        SAM configuration environment [default]: 
+...
+Deploy this changeset? [y/N]: y
+2022-02-24 00:57:57 - Waiting for stack create/update to complete
+CloudFormation events from stack operations
+...
+Key                 HelloWorldApi                                                                                                          
+Description         API Gateway endpoint URL for Prod stage for Hello World function                                                                                                           
+Value               https://tbxddu4c9i.execute-api.us-east-1.amazonaws.com/Prod/hello/
+```
+- access https://tbxddu4c9i.execute-api.us-east-1.amazonaws.com/Prod/hello/ on browser
+```json
+{
+  "message": "hello world"
+}
+```
 
 ## STEP FUNCTION app: "dtq-nodejs14.x"
 ### 1) local (need running docker local app)
