@@ -48,7 +48,7 @@ REPORT RequestId: 5f4f75e1-f314-4820-8b10-9f95868ec0d7  Init Duration: 0.34 ms  
 ![sam_debug2](screenshots/sam_debug2.png)
 ### 2) publish to AWS
 #### vscode GUI
-- Ctrl+P -> type `>deploy` -> select `Deploy SAM app`
+- Ctrl+P -> type `>deploy` -> select `AWS: Deploy SAM app`
 #### run CLI
 ```shell
 lambda-nodejs14.x$ sam deploy --guided
@@ -80,6 +80,8 @@ Value               https://tbxddu4c9i.execute-api.us-east-1.amazonaws.com/Prod/
   "message": "hello world"
 }
 ```
+#### invoke Lambda
+- AWS Explorer > Lambda > select `awstoolkit-HelloWorldFunction...` > Invoke on AWS > terminal tab `OUTPUT` > will see "hello world"
 
 ## STEP FUNCTION app: "dtq-nodejs14.x"
 ### 1) local (need running docker local app)
