@@ -13,6 +13,13 @@
 
 ## SAM app: "lambda-nodejs14.x"
 ### 1) local
+#### create
+- Ctrl+P -> type `>aws create sam` -> select `create SAM app`
+1. select `nodejs14.x`
+2. select `x86_64`
+3. select `SAM Hello World`
+4. select folder `aws-terraform-demo` (example)
+5. input app name `lambda-nodejs14.x` (example)
 #### run CMD CLI
 1. lambda
 ```shell
@@ -31,7 +38,8 @@ REPORT RequestId: 5f4f75e1-f314-4820-8b10-9f95868ec0d7  Init Duration: 0.34 ms  
 }
 ```
 #### debug
-- click `AWS: Edit debug configuration > Invoke` in `lambda-nodejs14.x/hello-world/app.js`
+- in `lambda-nodejs14.x/hello-world/app.js`: click `AWS: Edit debug configuration > Invoke`
+- this screenshot is debugging at breakpoint: `index.js` > line 10 
 ![sam_debug](screenshots/sam_debug.png)
 ### 2) publish to AWS
 - Ctrl+P -> type `>deploy` -> select `Deploy SAM app`
@@ -51,8 +59,8 @@ REPORT RequestId: a5e923cf-6447-463b-97f1-fd257da8e0dc  Init Duration: 0.26 ms  
 - choose tempate `Hello world`, ..., `Choice state`
 - select `json` OR `yaml`
 - will ouput *.json OR *.yaml file
-- click `render graph`, for example in `dtq-nodejs14.x/statemachine/stock_trader.asl.json`
+- in `dtq-nodejs14.x/statemachine/stock_trader.asl.json`: click `render graph`
 ![sf_create_sample](screenshots/sf_create_sample.png)
 ### 2) publish to AWS
-- click `publish to step function`, for example in `dtq-nodejs14.x/statemachine/stock_trader.asl.json`
+- in `dtq-nodejs14.x/statemachine/stock_trader.asl.json`: click `publish to step function`
 ![sf_publish](screenshots/sf_publish.png)
