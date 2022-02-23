@@ -12,7 +12,7 @@
 ![toolkit](screenshots/toolkit.png)
 
 ## SAM app: "lambda-nodejs14.x"
-### 1) local
+### 1) local (need running docker local app)
 #### create
 - Ctrl+P -> type `>aws create sam` -> select `create SAM app`
 1. select `nodejs14.x`
@@ -38,14 +38,19 @@ REPORT RequestId: 5f4f75e1-f314-4820-8b10-9f95868ec0d7  Init Duration: 0.34 ms  
 }
 ```
 #### debug
+- Way A:
 - in `lambda-nodejs14.x/hello-world/app.js`: click `AWS: Edit debug configuration > Invoke`
 - this screenshot is debugging at breakpoint: `index.js` > line 10 
 ![sam_debug](screenshots/sam_debug.png)
+- Way B:
+create breakpoint: `lambda-nodejs14.x/hello-world/app.js` > line 32
+- vscode left tab > click icon "debug" > click icon "▶️" at top left corner
+![sam_debug2](screenshots/sam_debug2.png)
 ### 2) publish to AWS
 - Ctrl+P -> type `>deploy` -> select `Deploy SAM app`
 
 ## STEP FUNCTION app: "dtq-nodejs14.x"
-### 1) local
+### 1) local (need running docker local app)
 #### run
 ```shell
 dtq-nodejs14.x$ sam local invoke StockCheckerFunction
